@@ -1,3 +1,5 @@
+import { TemplateLogin } from 'template/TemplateLogin';
+
 export default function Login() {
-  return <div>tela de login</div>;
+  return <TemplateLogin />;
 }
