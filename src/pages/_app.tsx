@@ -7,17 +7,11 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Next.js - Boilerplate</title>
+        <title>Time Tracking</title>
 
-        <link rel="shortcut icon" href="/img/icon-512.png" />
-        <link rel="apple-touch-icon" href="/img/icon-512.png" />
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="shortcut icon" href="/img/favicon-32x32.png" />
 
-        <meta name="theme-color" content="#06092B" />
-        <meta
-          name="description"
-          content="A project starter to work with TypeScript, React, NextJS and Styled Components"
-        />
+        <meta name="description" content="A time tracking dashborad" />
       </Head>
       <GlobalStyles />
       <Component {...pageProps} />
