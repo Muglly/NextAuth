@@ -1,6 +1,9 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
+import { ChakraProvider } from '@chakra-ui/react';
+import { theme } from '../../chakra.theme';
+
 import { GlobalStyles } from 'styles/global';
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -14,7 +17,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="description" content="A time tracking dashborad" />
       </Head>
       <GlobalStyles />
-      <Component {...pageProps} />
+      <ChakraProvider theme={theme}>
+        <Component {...pageProps} />
+      </ChakraProvider>
     </>
   );
 }
