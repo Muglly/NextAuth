@@ -31,7 +31,7 @@ export function TemplateLogin() {
             fontWeight={600}
             marginBottom="2rem"
           >
-            Sign in to your account
+            Faça login com sua conta
           </Text>
           <InputGroup>
             <InputLeftElement pointerEvents="none">
