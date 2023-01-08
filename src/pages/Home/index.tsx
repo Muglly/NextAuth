@@ -1,3 +1,5 @@
-export default function index() {
-  return <div>Óla mundo!!!</div>;
+import { TemplateHome } from 'template/TemplateHome';
+
+export default function Home() {
+  return <TemplateHome />;
 }
