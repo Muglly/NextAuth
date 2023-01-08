@@ -3,7 +3,8 @@ import * as S from './styles';
 export function Header() {
   return (
     <S.Container>
-      <h1>Header</h1>
+      <img src="https://github.com/muglly.png" alt="foto de perfil" />
+      <button type="submit">sair</button>
     </S.Container>
   );
 }
