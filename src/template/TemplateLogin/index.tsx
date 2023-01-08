@@ -11,6 +11,8 @@ import {
   useTheme,
 } from '@chakra-ui/react';
 
+import { signIn } from 'next-auth/react';
+
 export function TemplateLogin() {
   const theme = useTheme();
 
@@ -87,7 +89,7 @@ export function TemplateLogin() {
               leftIcon={<FiGithub color={theme.colors.gray['100']} />}
               color={theme.colors.gray['100']}
               _hover={{ backgroundColor: 'gray.700' }}
-              onClick={() => {}}
+              onClick={() => signIn('github')}
             >
               Github
             </Button>
