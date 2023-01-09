@@ -2,10 +2,9 @@ import { SessionProvider } from 'next-auth/react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
-import { ChakraProvider } from '@chakra-ui/react';
-import { theme } from '../../chakra.theme';
-
+import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from 'styles/global';
+import theme from 'styles/theme';
 
 export default function App({
   Component,
@@ -13,15 +12,15 @@ export default function App({
 }: AppProps) {
   return (
     <SessionProvider session={session}>
-      <Head>
-        <title>Time Tracking</title>
-        <link rel="shortcut icon" href="/img/favicon-32x32.png" />
-        <meta name="description" content="A time tracking dashborad" />
-      </Head>
-      <GlobalStyles />
-      <ChakraProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        <Head>
+          <title>Time Tracking</title>
+          <link rel="shortcut icon" href="/img/favicon-32x32.png" />
+          <meta name="description" content="A time tracking dashborad" />
+        </Head>
+        <GlobalStyles />
         <Component {...pageProps} />
-      </ChakraProvider>
+      </ThemeProvider>
     </SessionProvider>
   );
 }
