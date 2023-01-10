@@ -1,39 +1,103 @@
+import {
+  Box,
+  Button,
+  Flex,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Link,
+  Text,
+  useTheme,
+} from '@chakra-ui/react';
 import { FiGithub, FiLock, FiUser } from 'react-icons/fi';
+
 import { signIn } from 'next-auth/react';
-import Link from 'next/link';
 
-import * as S from './styles';
+function TemplateLogin() {
+  const theme = useTheme();
 
-export function TemplateLogin() {
   return (
-    <S.Flex>
+    <Flex
+      width="100%"
+      height="100vh"
+      alignItems="center"
+      justifyContent="center"
+    >
       <form onSubmit={() => {}}>
-        <S.Box>
-          <p>Faça login com sua conta</p>
-          <div className="icon">
-            <FiUser />
-            <input type="email" placeholder="email" />
-          </div>
-          <div className="icon">
-            <FiLock />
-            <input placeholder="Senha" type="password" />
-          </div>
-          <S.FlexColumn>
-            <button type="submit">Entrar</button>
-            <Link href="#">
-              Não tem uma conta?
-              <span> Registre-se</span>
-            </Link>
-          </S.FlexColumn>
+        <Box width="428px">
+          <Text
+            color="gray.100"
+            fontSize="xl"
+            textAlign="center"
+            fontFamily="heading"
+            fontWeight={600}
+            marginBottom="2rem"
+          >
+            Faça login com sua conta
+          </Text>
+          <InputGroup>
+            <InputLeftElement pointerEvents="none">
+              <FiUser color={theme.colors.gray['500']} />
+            </InputLeftElement>
+            <Input
+              placeholder="Email"
+              marginBottom="1rem"
+              borderColor="gray.700"
+              backgroundColor="gray.700"
+              color="gray.100"
+            />
+          </InputGroup>
+          <InputGroup>
+            <InputLeftElement pointerEvents="none">
+              <FiLock color={theme.colors.gray['500']} />
+            </InputLeftElement>
+            <Input
+              placeholder="Senha"
+              borderColor="gray.700"
+              backgroundColor="gray.700"
+              color="gray.100"
+              type="password"
+            />
+          </InputGroup>
 
-          <S.FlexGit>
-            <p>Ou entre com</p>
-            <button onClick={() => signIn('github')}>
-              <FiGithub /> Github
-            </button>
-          </S.FlexGit>
-        </S.Box>
+          <Flex direction="column" alignItems="center">
+            <Button
+              type="submit"
+              marginTop="2rem"
+              marginBottom="1rem"
+              width="100%"
+              backgroundColor="secondary.500"
+              _hover={{ backgroundColor: 'secondary.600' }}
+            >
+              Entrar
+            </Button>
+            <Link href="#" color="gray.100">
+              Não tem uma conta?
+              <Text as="span" color="secondary.500">
+                {' '}
+                Registre-se
+              </Text>
+            </Link>
+          </Flex>
+
+          <Flex marginTop="2rem" alignItems="center" justifyContent="center">
+            <Text color="secondary.500" textAlign="center" marginRight="1rem">
+              Ou entre com
+            </Text>
+            <Button
+              backgroundColor="gray.600"
+              leftIcon={<FiGithub color={theme.colors.gray['100']} />}
+              color={theme.colors.gray['100']}
+              _hover={{ backgroundColor: 'gray.700' }}
+              onClick={() => signIn()}
+            >
+              Github
+            </Button>
+          </Flex>
+        </Box>
       </form>
-    </S.Flex>
+    </Flex>
   );
 }
+
+export default TemplateLogin;

@@ -15,7 +15,7 @@ export const GlobalStyles = createGlobalStyle`
   html, body, #__next {
     height: 100%;
     width: 100%;
-    background-color: ${({ theme }) => theme.colors.background}
+    background-color: #0d1323;
   }
 
   body {
