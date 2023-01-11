@@ -1,9 +1,12 @@
 import * as S from './styles';
 
-export function Header() {
+export function Header({ session }) {
   return (
     <S.Container>
-      <img src="https://github.com/muglly.png" alt="foto de perfil" />
+      {session?.user?.image && (
+        <img src={session.user.image} alt="foto de perfil" />
+      )}
+
       <button type="submit" onClick={() => {}}>
         sair
       </button>
