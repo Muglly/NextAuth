@@ -9,12 +9,18 @@ import {
   Text,
   useTheme,
 } from '@chakra-ui/react';
-import { FiGithub, FiLock, FiUser } from 'react-icons/fi';
 
+import { FiGithub, FiLock, FiUser } from 'react-icons/fi';
+import { FormEvent } from 'react';
 import { signIn } from 'next-auth/react';
 
 function TemplateLogin() {
   const theme = useTheme();
+
+  const onSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    signIn('credentials');
+  };
 
   return (
     <Flex
@@ -23,7 +29,7 @@ function TemplateLogin() {
       alignItems="center"
       justifyContent="center"
     >
-      <form onSubmit={() => {}}>
+      <form onSubmit={onSubmit}>
         <Box width="428px">
           <Text
             color="gray.100"
