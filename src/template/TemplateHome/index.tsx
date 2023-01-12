@@ -1,4 +1,5 @@
 import { Box, Button, Flex, Image, Text, theme } from '@chakra-ui/react';
+import Dashboard from 'components/Dashboard';
 import { signOut, useSession } from 'next-auth/react';
 
 export function TemplateHome() {
@@ -19,8 +20,8 @@ export function TemplateHome() {
         <Flex alignItems="center">
           {session?.user?.image && (
             <Image
-              src={session?.user?.image}
-              alt={session?.user?.name as string}
+              src={session.user.image}
+              alt={session.user.name as string}
               width="3rem"
               height="3rem"
               borderRadius="full"
@@ -41,6 +42,7 @@ export function TemplateHome() {
           SAIR
         </Button>
       </Flex>
+      <Dashboard />
     </>
   );
 }
