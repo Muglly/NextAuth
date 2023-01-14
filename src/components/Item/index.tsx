@@ -1,5 +1,4 @@
-import iconEllipsis from 'img/icon-ellipsis.svg';
-import './item.css';
+import * as S from './styles';
 
 interface ItemProps {
   title: string;
@@ -9,18 +8,20 @@ interface ItemProps {
 
 const Item = ({ title, hours, prevLog }: ItemProps) => {
   return (
-    <div className={'trackerItem ' + title}>
-      <div className="trackerInfo">
-        <div className="header">
-          <span className="title">{title}</span>
-          <img src={iconEllipsis} alt="settings" />
-        </div>
-        <div className="body">
-          <span className="hours">{hours}hrs</span>
-          <span className="prevLog">last week - {prevLog}hrs</span>
+    <S.Container>
+      <div className={'trackerItem ' + title}>
+        <div className="trackerInfo">
+          <div className="header">
+            <span className="title">{title}</span>
+            <img src="img/icon-ellipsis.svg" alt="settings" />
+          </div>
+          <div className="body">
+            <span className="hours">{hours}hrs</span>
+            <span className="prevLog">last week - {prevLog}hrs</span>
+          </div>
         </div>
       </div>
-    </div>
+    </S.Container>
   );
 };
 

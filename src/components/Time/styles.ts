@@ -28,7 +28,7 @@ export const TimeContainer = styled.div`
     li {
       font-size: 1.1rem;
     }
-    .tabs {
+    > .tabs {
       display: flex;
       width: 100%;
       justify-content: space-evenly;
