@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const DashContainer = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 100px;
   width: 100%;
   height: 635px;
