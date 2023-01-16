@@ -6,17 +6,7 @@ export default function Time() {
 
   return (
     <S.TimeContainer>
-      <ul className="tabs">
-        <li data-tab="daily" className="tab active" onClick={() => {}}>
-          daily
-        </li>
-        <li data-tab="weekly" className="tab" onClick={() => {}}>
-          weekly
-        </li>
-        <li data-tab="monthly" className="tab" onClick={() => {}}>
-          monthly
-        </li>
-      </ul>
+      <div>Você está Logado</div>
     </S.TimeContainer>
   );
 }

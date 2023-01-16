@@ -1,4 +1,3 @@
-import TabContent from 'components/TabContent';
 import Time from 'components/Time';
 import { UserInfo } from 'components/UserInfo';
 import * as S from './styles';
