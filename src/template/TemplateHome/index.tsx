@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image, Text, theme } from '@chakra-ui/react';
+import { Button, Flex, Image, Text, theme } from '@chakra-ui/react';
 import Dashboard from 'components/Dashboard';
 import { signOut, useSession } from 'next-auth/react';
 
